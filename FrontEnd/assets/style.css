@@ -186,3 +186,23 @@ footer nav ul {
 	margin: 2em
 }
 
+/************Ajout************/
+
+#category {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin-bottom: 30px;
+}
+
+#category.active {
+	display: none;
+}
+
+#category button {
+	background: none;
+	border-radius: 12px;
+	border: solid 1px #1D6154;
+	color: #1D6154;
+	cursor: pointer;
+}
