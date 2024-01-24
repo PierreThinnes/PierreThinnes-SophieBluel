@@ -1,7 +1,6 @@
 //importation des fonction (module)
 //Works
-import {getWorks} from "./scripts/fetchData.js";
-import { getCategory} from "./scripts/fetchData.js";
+import {getWorks, getCategory} from "./scripts/fetchData.js";
 import {filtersCreation, majFilters, majGallery} from "./scripts/gallery.js";
 //Filtres Catégories
 
