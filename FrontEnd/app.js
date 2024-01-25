@@ -1,8 +1,8 @@
 //importation des fonction (module)
-//Works
 import {getWorks, getCategory} from "./scripts/fetchData.js";
 import {filtersCreation, majFilters, majGallery} from "./scripts/gallery.js";
-//Filtres Catégories
+import { manageEditionMode } from "./scripts/modeEdition.js";
+
 
 //visualisation des tableaux dans la console
 console.log(getWorks());
@@ -18,5 +18,7 @@ majGallery(works);
 majFilters(category);
 
 filtersCreation(works);
+
+manageEditionMode()
 
 

@@ -11,16 +11,25 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<!-- ajout -->
 	<script defer type="module" src="./app.js"></script>
+	<script src="https://kit.fontawesome.com/90c44a2e92.js" crossorigin="anonymous"></script>
 	<!--  -->
 </head>
 <body>
+<!-- ajout du bandeau mode edition -->
+<section id="adminLogged">
+	<div id="editionMode">
+	<i class="fa-regular fa-pen-to-square"></i>
+		<p>Mode édition</p>	
+	</div>
+</section>
+<!--  -->
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li><a href="#portfolio">projets</a></li>
 			<li><a href="#contact">contact</a></li>
-			<li><a href="login.html"><span id="loginToLogout">login</span></a></li>
+			<li><a href="#"><span id="loginToLogout">login</span></a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -37,18 +46,23 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
+	
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="modifierEdition">
+			<h2>Mes Projets</h2>
+		<a id="modifierIcone"><i class="fa fa-edit"></i> modifier</a>
+		</div>
 			<!-- filtres -->
 		<div id=category>
 			<button class="filterAll" data-id="0">Tous</button>
-				<!-- création des filtres en dynamique -->
+			<!-- création des filtres en dynamique -->
 		</div>
 			<!-- galerie -->
 		<div class="gallery" id="gallery">
-				<!-- création des figures en dynamique -->
+			<!-- création des figures en dynamique -->
 		</div>
 	</section>
+
 	<section id="contact">
 		<h2>Contact</h2>
 		<p>Vous avez un projet ? Discutons-en !</p>
