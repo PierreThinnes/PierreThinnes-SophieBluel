@@ -1,21 +1,21 @@
 //Création de la gallerie
 
 export function majGallery(listWorks) {
-    const gallery = document.querySelector(".gallery");
-    try {
-      gallery.innerHTML = "";
-      listWorks.map((work) => {
-        gallery.appendChild(createfigure(work));
-      });
-    } catch (err) {
-      window.alert("Impossible de charger la gallerie");
-      console.log(err);
-    }
+  try {
+    gallery.innerHTML = "";
+    listWorks.map((work) => {
+      gallery.appendChild(createfigure(work));
+    });
+  } catch (err) {
+    window.alert("Impossible de charger la gallerie");
+    console.log(err);
   }
+}
 
 //Création du html: Figure
 
-  export function createfigure(work) {
+export function createfigure(work) {
+    const gallery = document.querySelector(".gallery");
     const figure = document.createElement("figure");
     figure.id = "figure" + work.id;
     const img = document.createElement("img");
