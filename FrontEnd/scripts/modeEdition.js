@@ -20,7 +20,7 @@ function isConnected() {
         window.location.replace("index.html");
       });
       adminLogged.classList.add("active");
-      modifierIcone.classList.add("active");
+      modifierIcon.classList.add("active");
       category.classList.add("active");
     } else {
       loginToLogout.innerText = "login";

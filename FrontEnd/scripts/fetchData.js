@@ -54,7 +54,7 @@ export async function getLogin(user) {
     if (!response.ok) {
       errorDial.style.display = "block"; // Affiche errorDial en cas d'erreur
       console.error(`Erreur HTTP! Statut : ${response.status}`);
-      return null; // Retourne null en cas d'erreur
+      return null; 
     }
   
     const responseData = await response.json();
@@ -65,6 +65,57 @@ export async function getLogin(user) {
     } else {
       errorDial.style.display = "block"; // Affiche errorDial en cas d'erreur
       console.error("Informations d'identification incorrectes");
-      return null; // Retourne null en cas d'erreur
+      return null; 
     }
   }
+
+// SUPPRIMER UN WORK
+export async function deleteWork(id) {
+  try {
+    const token = sessionStorage.getItem("token");
+    const options = {
+      method: "DELETE",
+      headers: {
+        accept: "*application/json*",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    
+    const response = await fetch(`http://localhost:5678/api/works/${id}`, options);
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! Statut : ${response.status}`);
+    }
+
+    return response;
+  } catch (error) {
+    console.error("Une erreur s'est produite lors de la suppression du travail", error);
+    throw error; 
+  }
+}
+  
+// ENVOYER UN NOUVEAU WORK
+export async function postNewWork(data) {
+  try {
+    const token = sessionStorage.getItem("token");
+    const options = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: data,
+    };
+
+    const response = await fetch("http://localhost:5678/api/works", options);
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP! Statut : ${response.status}`);
+    }
+
+    return response;
+  } catch (error) {
+    console.error("Une erreur s'est produite lors de l'envoi d'un nouveau travail", error);
+    throw error; 
+  }
+}
