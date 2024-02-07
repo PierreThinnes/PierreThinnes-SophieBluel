@@ -1,8 +1,8 @@
 // IMPORTS
-import { deleteWork } from "./fetchData.js";
+import { suppressWork } from "./modalDelete.js";
 
 // CREER UNE CARD PAR TRAVAIL
-export function createCard(work) {
+function createCard(work) {
   const card = document.createElement("div");
   card.classList.add("card");
   const bin = document.createElement("img");
@@ -38,27 +38,5 @@ export function majModalgallery(listOfWorks) {
   } catch (err) {
     window.alert("Problême de connection : impossible de charger la gallerie");
     console.log(err);
-  }
-}
-
-// SUPPRIMER UN WORK
-async function suppressWork(event, id) {
-  if (
-    window.confirm("Voulez-vous vraiment supprimer ce projet de la gallerie ?")
-  ) {
-    event.preventDefault();
-    try {
-      const deleteResponse = await deleteWork(id);
-      console.log(
-        "Requète DELETE envoyé. Réponse du serveur : ",
-        deleteResponse
-      );
-      return deleteResponse.ok;
-    } catch (err) {
-      window.alert(
-        "Problême de connection : impossible de supprimer le projet"
-      );
-      console.log(err);
-    }
   }
 }

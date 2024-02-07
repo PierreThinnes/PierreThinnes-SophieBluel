@@ -2,7 +2,6 @@
 import {getWorks, getCategory} from "./scripts/fetchData.js";
 import {filtersCreation, majFilters, majGallery} from "./scripts/gallery.js";
 import { manageEditionMode } from "./scripts/modeEdition.js";
-
 import {
     closeEditionModal,
     openAddPhotoModal,
@@ -22,6 +21,19 @@ import {
 console.log(getWorks());
 console.log(getCategory())
 
+
+// Fonction pour mettre en surbrillance le bouton "Tous" par défaut
+function highlightDefaultFilter() {
+  const allButton = document.querySelector("#category button[data-id='0']");
+  allButton.classList.add("all");
+}
+
+// Appel de la fonction au chargement de la page
+window.addEventListener("load", () => {
+  highlightDefaultFilter();
+});
+
+
 //création des variables
 let works = await getWorks();
 let category = await getCategory();
@@ -35,6 +47,7 @@ filtersCreation(works);
 
 manageEditionMode()
 
+
 // OUVRIR LA MODALE D'EDITION
 majModalgallery(works);
 const modifierBtn = document.getElementById("modifierIcon");
@@ -45,6 +58,12 @@ modifierBtn.addEventListener("click", () => {
 // FERMER LA MODALE D'EDITION EN CLIQUANT SUR LA CROIX
 const modalClose = document.querySelector(".modal-close");
 modalClose.addEventListener("click", closeEditionModal);
+
+
+// FERMER LA MODALE D'EDITION EN CLIQUANT SUR LA CROIX DE LA DEUXIEME MODAL
+const closeModalButton = document.querySelector("#modal-view-add-photo .modal-close");
+closeModalButton.addEventListener("click", closeEditionModal);
+
 
 // FERMER LA MODALE D'EDITION EN CLIQUANT SUR L'OVERLAY
 const overlay = document.getElementById("overlay");

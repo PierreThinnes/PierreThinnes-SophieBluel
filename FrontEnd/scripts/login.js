@@ -17,6 +17,7 @@ function resetFieldBorderOnFocus(field) {
 resetFieldBorderOnFocus(inputEmail);
 resetFieldBorderOnFocus(inputPassword);
 
+
 // Modifiez le nom de la fonction
 export function checkInputs() {
   let fieldsFilled = true;
@@ -40,7 +41,7 @@ export function checkInputs() {
 
 
 
-// Écoute du clic sur le bouton
+// Écoute du clic sur le bouton "Se connecter"
 
 submitUserInfo.addEventListener("click", async (event) => {
   event.preventDefault();

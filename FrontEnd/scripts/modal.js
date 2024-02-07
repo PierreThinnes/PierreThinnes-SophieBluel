@@ -12,6 +12,8 @@ export function openEditionModal() {
     editionModal.classList.remove("active");
     const modalViewGallery = document.getElementById("modal-view-gallery");
     modalViewGallery.classList.remove("active");
+    const modalViewAddPhoto = document.getElementById("modal-view-add-photo");
+    modalViewAddPhoto.classList.remove("active");
   }
   
   // OUVRIR LA MODAL "AJOUTER PHOTO"

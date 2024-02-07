@@ -226,6 +226,11 @@ footer nav ul {
 	cursor: pointer;
 }
 
+#category .all {
+	background-color: #1D6154;
+	color: white;
+  }
+
 /**********Ajout Login***********/
 
 body{
@@ -422,12 +427,16 @@ body{
 
 .modal-close {
 	position: relative;
-	left: 300px;
-	top: 5px;
+	left: 285px;
+	top: -5px;
 	color: black;
 	font-size: 30px;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+#modal-view-gallery .modal-close {
+	top : 12px
 }
 
 #edition-modal-content h3 {
@@ -484,6 +493,7 @@ body{
 	display: none;
 }
 
+
 #modal-view-add-photo.active {
 	width: 100%;
 	height: 100%;
@@ -494,14 +504,11 @@ body{
 
 #goBack {
 	position: relative;
-	width: 30px;
-	left: -290px;
-	top: 10px;
+	left: -285px;
+	top: 16px;
 }
 
-#modal-view-add-photo.active .modal-close {
-	top: -20px;
-}
+
 
 #addPhoto {
 	height: 170px;

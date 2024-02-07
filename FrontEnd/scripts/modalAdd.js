@@ -36,6 +36,9 @@ export async function createOptionsByCategories(listOfCategories) {
     projectCategory.innerHTML = "";
     const nullOption = document.createElement("option");
     nullOption.value = "";
+    //test
+    nullOption.innerText = "Sélectionnez une catégorie";
+    //
     projectCategory.appendChild(nullOption);
     listOfCategories.map((category) => {
       const option = document.createElement("option");
@@ -72,6 +75,14 @@ export async function createNewWork() {
   // DECLARER UN NOUVEAU FORMDATA A PARTIR DU FORMULAIRE
   const formData = new FormData();
   formData.append("title", projectTitle.value);
+
+    // Vérifier la taille de la photo
+    const photo = addPhotoBtn.files[0];
+    if (photo && photo.size > 4 * 1024 * 1024) { // Taille en octets
+      window.alert("La taille de la photo dépasse 4 Mo. Veuillez choisir une autre photo.");
+      return; // Arrêter l'exécution de la fonction
+    }
+
   formData.append("image", addPhotoBtn.files[0]);
   formData.append("category", projectCategory.value);
   //ENVOI DE LA REQUETE
