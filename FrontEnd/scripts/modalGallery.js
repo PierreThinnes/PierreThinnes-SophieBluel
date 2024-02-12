@@ -20,10 +20,8 @@ function createCard(work) {
   const img = document.createElement("img");
   img.src = work.imageUrl;
   img.alt = work.title;
-  const edition = document.createElement("a");
   card.appendChild(bin);
-  card.appendChild(img);
-  card.appendChild(edition);
+  card.appendChild(img);  
   return card;
 }
 

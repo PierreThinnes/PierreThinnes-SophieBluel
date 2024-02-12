@@ -220,10 +220,14 @@ footer nav ul {
 
 #category button {
 	background: none;
-	border-radius: 12px;
+	border-radius: 20px;
 	border: solid 1px #1D6154;
 	color: #1D6154;
 	cursor: pointer;
+	padding: 8px 40px;
+	font-size: medium;
+	margin-bottom: 15px;
+	margin-top: 15px;
 }
 
 #category .all {

@@ -71,7 +71,7 @@ export function filtersCreation (listWorks) {
 
         //Effacer la galeries existante
         gallery.innerHTML = "";
-
+        
         /*  Si le boutton selectionné est Tous alors je remet l'html des figures au complet.
             Sinon, je fais une recherche d'id (catégory), puis je crée le tableau concernant la
             catégorie. (Sans oublier de convertir data Id en nombre pour la comparaison des arrays)
